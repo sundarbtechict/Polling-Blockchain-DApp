@@ -23,6 +23,7 @@ contract Poll {
         addEntity("JavaScript");
         addEntity("Java");
         addEntity("Python");
+        addEntity("C#");
     }
 
     function addEntity(string _name) private {
