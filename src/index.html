@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Poll Results</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">Best Programming Language Now</h1>
+          <hr/>
+          
+         <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            
+            <table class="table" id="results">
+              <thead>
+                <tr>
+                  <th scope="col">Programming Language</th>
+                  <th scope="col">Poll Results</th>
+                </tr>
+              </thead>
+              <tbody id="EntitiesResults">
+              </tbody>
+            </table>
+            <hr/>
+            <form id="polling" onSubmit="App.castVote(); return false;">
+              <h3 class="text-center">Let's share your Thoughts!!!</h3>
+              <div class="form-group">
+                <label for="EntitiesSelect">Choose your favorite programing language</label>
+                <div id="EntitiesSelect">
+
+                </div>
+                <!-- <select class="form-control" id="EntitiesSelect">
+                </select> -->
+              </div>
+              <button type="submit" class="btn btn-success">Submit</button>
+              <hr />
+            </form>
+            <p id="accountAddress" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <style>
+      #results td{
+        text-align: center;
+        width: 60%;
+      }
+      #results th:first{
+        text-align: center;
+        width: 40%;
+      }
+      #EntitiesSelect{
+        text-align: left;
+        width: 60px;
+        margin: 0 auto;
+      }
+      #polling{
+        text-align: center;
+      }
+    </style>
+  </body>
+</html>
